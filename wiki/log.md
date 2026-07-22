@@ -15,3 +15,13 @@ Cronologia append-only delle operazioni sulla wiki.
   - briefing: [[Strategia difensiva — CUP servizi di rete (telefonia)]]
   - template: [[memoria-di-costituzione]]
 - ⚠ Rilevati refusi nella memoria raw (riferimenti a "Cazzano di Tramigna" in atto intestato a Berbenno; data richiesta utenze divergente 12/11/2024 vs 17/07/2025). Registrati in [[2026-05-14 Memoria Berbenno c. WindTre (GdP Bergamo)]], da sanare.
+
+## [2026-07-22] git init | versionamento
+- Inizializzato repository git + `.gitignore`; primo commit dell'intero progetto (raw + wiki + CLAUDE.md).
+
+## [2026-07-22] redazione memoria (demo) | Berbenno c. Vodafone
+- **Ingest** dell'atto di citazione avversario `raw/…/TELEFONIA/VODAFONE/CITAZIONE OPPOSIZIONE VODAFONE C- COM. BERBENNO CUP 21-22-23-24.pdf`.
+- Create: entity [[Vodafone]] (con controtesi + precedenti avversari), contenzioso [[Comune di Berbenno c. Vodafone — Trib. Bergamo (ord.) 2025]].
+- Eseguito workflow `redazione memoria` → generata [[BOZZA — Comparsa Berbenno c. Vodafone]] (risposta ai 4 motivi, da validare).
+- ⚠ Segnalato **rischio motivo IV** (sanzione 100% vs 30% ex art. 58 Reg. comunale) → verificare Regolamento ed eventuale autotutela.
+- Arricchito il concept [[Soggettività passiva in via mediata]] con la sezione "Controtesi degli operatori".

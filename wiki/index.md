@@ -18,12 +18,16 @@ Catalogo della wiki. Aggiornato dall'assistente ad ogni ingest/redazione. Stato:
 
 ## Entities
 - Comuni: [[Comune di Berbenno (BG)]]
-- Operatori: [[WindTre]] · Vodafone *(stub)* · Fastweb *(stub)*
+- Operatori: [[WindTre]] · [[Vodafone]] · Fastweb *(stub)*
 - Autorità: [[AGCOM]]
 - Studio/soggetti: [[Archivia Solution]] · [[Avv. Maria Voccia De Felice]]
 
 ## Contenziosi
 - [[Comune di Berbenno c. WindTre — GdP Bergamo RG 3481-2025]] (pendente, ud. 08/10/2026)
+- [[Comune di Berbenno c. Vodafone — Trib. Bergamo (ord.) 2025]] (pendente, ud. 29/09/2025)
+
+## Bozze (atti generati, da validare)
+- [[BOZZA — Comparsa Berbenno c. Vodafone]]
 
 ## Sources principali
 - Cassazione: [[2026-05-01 Cass SS.UU. 12225 — natura tributaria CUP]] · [[2026-04-28 Cass 11479 — VULA Wind]]

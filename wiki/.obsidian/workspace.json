@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f8938dbf01173c10",
@@ -177,5 +178,10 @@
     }
   },
   "active": "2dcbd066dab3f019",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "bozze/BOZZA — Comparsa Berbenno c. Vodafone.md",
+    "contenziosi/Comune di Berbenno c. Vodafone — Trib. Bergamo (ord.) 2025.md",
+    "entities/Vodafone.md",
+    "bozze"
+  ]
 }
