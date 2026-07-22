@@ -1,3 +1,6 @@
 .DS_Store
 *.tmp
 ~$*
+.venv/
+raw_text/
+__pycache__/

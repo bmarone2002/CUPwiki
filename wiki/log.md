@@ -25,3 +25,13 @@ Cronologia append-only delle operazioni sulla wiki.
 - Eseguito workflow `redazione memoria` → generata [[BOZZA — Comparsa Berbenno c. Vodafone]] (risposta ai 4 motivi, da validare).
 - ⚠ Segnalato **rischio motivo IV** (sanzione 100% vs 30% ex art. 58 Reg. comunale) → verificare Regolamento ed eventuale autotutela.
 - Arricchito il concept [[Soggettività passiva in via mediata]] con la sezione "Controtesi degli operatori".
+
+## [2026-07-22] industrializzazione | pipeline deduplica + conversione corpus
+- Creato ambiente `.venv` (pypdf) e script riusabile `tools/convert_and_dedup.py`.
+- Eseguita pipeline su `raw/` → proiezione testuale in `raw_text/` + inventario `tools/manifest.csv`.
+- **Numeri reali del corpus:**
+  - 1.014 file totali → **592 unici** (per hash sha256), **422 duplicati esatti** (~42%: forte sovrapposizione tra le due cartelle originali, come previsto).
+  - **585 convertiti** in testo (docx via textutil, pdf via pypdf, pptx via estrazione XML) = **11 MB** di testo in `raw_text/`.
+  - **5 PDF da OCR** (scansioni, 0 caratteri): `Consiglio-di-Stato-Sez.V-8190-2025`, `RG_7546_2025_Decreto_PP`, `Scan2025-04-18`, `TAR_LAZIO`, `sentenza viadotti 22-07-2022`.
+  - **2 file corrotti**: `AGCOM RELAZIONE ANNUALE 2024.pdf` (vuoto), `CITAZIONE OPPOSIZIONE FASTWEB COM. BERBENNO.pdf` in /VODAFONE (stream troncato → recuperare la copia integra).
+- `.venv/` e `raw_text/` esclusi da git (artefatti derivati, rigenerabili); `manifest.csv` versionato come inventario.
