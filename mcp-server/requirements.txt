@@ -1,0 +1,9 @@
+# Core MCP server (transport stdio — uso personale/locale)
+mcp>=1.0
+pyyaml
+python-frontmatter
+
+# Solo per il transport HTTP (modalità hostata, multi-utente).
+# Non servono se usi solo stdio in locale.
+uvicorn
+starlette

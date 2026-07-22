@@ -1,0 +1,165 @@
+# {{NOME KB}} — Schema della LLM Wiki
+
+> **Come usare questo template.** Copia questo file come `CLAUDE.md` nella root del tuo repo wiki, poi sostituisci ogni `{{PLACEHOLDER}}` e adatta le liste. Cancella i box `> 🧵 Fil rouge` e queste righe di istruzioni quando hai finito. Questo file È la configurazione del sistema: dice all'agent come è strutturata la wiki e che workflow eseguire. Co-evolve con l'uso.
+
+Questo file dice a Claude come è strutturata questa wiki, quali convenzioni seguire e quali workflow eseguire quando l'utente chiede di ingerire una fonte, fare una query o fare lint.
+
+## Identità
+
+Questa wiki è **{{una frase: cos'è e a chi serve}}**.
+
+L'obiettivo è **{{lo scopo: es. accumulare nel tempo una memoria interrogabile su X per non ripartire da zero ogni volta}}**.
+
+È una LLM Wiki in **markdown puro** (niente DB, niente RAG): la scelta privilegia time-to-value, leggibilità e conoscenza compilata sopra il retrieval semantico. Vedi `BLUEPRINT.md` per il razionale completo.
+
+> 🧵 **Fil rouge** — "Questa wiki è la mia memoria di ricerca personale: persone, organizzazioni, temi che studio, i miei progetti e i documenti che leggo. L'obiettivo è che 'tutto quello che so su X' sia sempre a una domanda di distanza, e che ogni cosa imparata resti scritta e linkata invece di evaporare."
+
+## Architettura a 3 cerchi
+
+1. **Raw** (immutabile): i documenti originali in `{{path dei raw, es. ../raw/ o un cloud}}`. Claude **legge ma non modifica mai**.
+2. **Wiki** (questo repo, `wiki/`): pagine markdown create e mantenute da Claude. È il delivery layer del valore.
+3. **Index/metadata** (futuro, opzionale): non implementato. Aggiungere solo a scala elevata.
+
+## Struttura della repo
+
+```
+{{nome-repo}}/
+├── CLAUDE.md          ← questo file
+├── index.md           ← catalogo content-oriented della wiki
+├── log.md             ← log cronologico append-only
+├── wiki/
+│   ├── entities/      ← {{le "cose" del tuo mondo}}
+│   ├── projects/      ← {{le tue iniziative/contesti}}
+│   ├── topics/        ← {{le tue aree tematiche}}
+│   ├── concepts/      ← conoscenza derivata (metodi, framework, sintesi)
+│   ├── sources/       ← 1 file = 1 documento ingerito (summary + link al raw)
+│   └── briefings/     ← output di query di valore, filati come pagina
+└── mcp-server/        ← server MCP (vedi mcp-server/README.md)
+```
+
+## Tipi di pagina
+
+| `type` | Cos'è | Cartella |
+|---|---|---|
+| `entity` | {{persona, organizzazione, prodotto… — adatta}} | `entities/` |
+| `project` | {{una tua iniziativa/contesto}} | `projects/` |
+| `topic` | {{un'area tematica}} | `topics/` |
+| `concept` | conoscenza derivata | `concepts/` |
+| `source` | 1 documento ingerito | `sources/` |
+| `briefing` | sintesi derivata da N pagine | `briefings/` |
+
+### Regola fondamentale: `entity` ≠ `project`
+
+Una cosa del mondo e un *tuo* contesto su quella cosa sono **due pagine distinte, linkate**. La cosa vive in più contesti e nel tempo; il contesto è tuo e datato. Non fonderle.
+
+> 🧵 **Fil rouge** — `entities/Niklas Luhmann.md` (fatti pubblici, neutri) è distinto da `projects/Project Atlas.md` (il tuo sforzo, che linka `[[Niklas Luhmann]]`).
+
+## Convenzioni di naming
+
+- Nomi in forma naturale con spazi: `{{Esempio Pagina}}.md`.
+- Temi/tassonomie: `{{kebab-case|snake_case}}`, coerente.
+- Source: `YYYY-MM-DD <slug>.md`.
+- Omonimia: `Nome (Disambiguante).md`.
+
+## Frontmatter standard
+
+Campi comuni a tutti i tipi:
+
+```yaml
+---
+type: {{entity|project|topic|concept|source|briefing}}
+tags: [{{tag1}}, {{tag2}}]
+sensitivity: {{public|internal|confidential|restricted}}
+updated_at: YYYY-MM-DD
+---
+```
+
+Per `source` (traccia la provenienza):
+
+```yaml
+---
+type: source
+source_path: "{{path al raw}}"
+ingested_at: YYYY-MM-DD
+as_of_date: YYYY-MM-DD
+bias: {{neutral|internal|partisan}}
+confidence: {{verified|estimated|claimed}}
+shelf_life_months: {{12|24|…}}
+expires_at: YYYY-MM-DD
+tags: [...]
+sensitivity: ...
+---
+```
+
+## Tassonomia (`tags`)
+
+Vocabolario controllato dei tag. Quando incontri un tag mai visto, **chiedi conferma** prima di crearlo (HITL).
+
+{{Elenca qui i tuoi tag iniziali, eventualmente raggruppati. Esempio:}}
+
+> 🧵 **Fil rouge** —
+> - **Aree**: knowledge-management, note-taking, productivity, learning-science
+> - **Formati fonte**: book, paper, article, video, talk
+
+## Sistema metadata
+
+- **bias**: `neutral` (fonti indipendenti), `internal` (output tuo), `partisan` (fonte di parte/promozionale).
+- **confidence** (la certezza cresce salendo): `verified` (fatti da fonti primarie), `estimated` (stime con base quantitativa), `claimed` (non verificato / di parte). Marcare `claimed` non è negativo — è onesto.
+- **sensitivity**: `public` → `internal` → `confidential` → `restricted`. Default `internal` se ambiguo.
+- **shelf_life_months**: oltre `expires_at` la pagina resta ma è considerata stale dalle query.
+
+## Workflow: ingest
+
+Trigger: "ingerisci [path/nome file]".
+
+1. **Leggi la fonte** dal Cerchio 1 (raw). Per binari non leggibili, registra solo metadati + path.
+2. **Mostra 3–5 takeaway e chiedi conferma** (HITL) prima di scrivere.
+3. **Crea la source page** in `sources/YYYY-MM-DD <slug>.md` con frontmatter completo + summary (200–500 parole) + key takeaways. Linka via `[[wikilink]]` ogni entità menzionata.
+4. **Aggiorna/crea le entity/project/topic/concept page** toccate. Se le nuove info contraddicono claim esistenti, **non sovrascrivere**: tieni entrambe + sezione "⚠ Contraddizioni da verificare". Per nuovi tag: HITL.
+5. **Aggiorna `index.md`** con le pagine nuove + one-liner.
+6. **Appendi a `log.md`**: `## [YYYY-MM-DD] ingest | <slug>` + pagine create/aggiornate.
+7. **Riassumi** cosa hai toccato; suggerisci letture correlate o gap.
+
+### Sezioni standard per le entity page
+
+Adatta al tipo. In generale: cosa è / cosa fa, profilo, relazioni rilevanti, note di contesto, **Source citate**.
+
+> 🧵 **Fil rouge** — Persona: Profilo, Contributi, Opere chiave, Connessioni, Source citate. Org: Cosa fa, Prodotti, Persone chiave, Note, Source citate.
+
+## Workflow: query
+
+Trigger: domanda libera o "query [domanda]".
+
+1. **Leggi `index.md`** per orientarti.
+2. **Identifica e leggi per intero** le pagine candidate (non solo i titoli).
+3. **Sintetizza** con citazioni `[[Page]]` per ogni claim. **Mai inventare**: se la wiki non sa, dichiaralo e proponi cosa ingerire.
+4. **Output adatto**: prosa per analisi, tabella per confronti.
+5. **Filing back**: se la risposta è di valore, proponi di salvarla come `concept`/`briefing` (deve linkare le source di partenza).
+6. **Appendi a `log.md`**: `## [YYYY-MM-DD] query | <topic>` + pagine consultate.
+
+## Workflow: lint
+
+Trigger: "lancia lint" / "audit wiki" (cadenza: ogni 1–2 settimane d'uso).
+
+1. **Contraddizioni** tra pagine (date/valori diversi sulla stessa entità).
+2. **Pagine orfane** (senza link entranti) → da collegare o cancellare.
+3. **Concept impliciti**: termini ricorrenti senza pagina dedicata → proponi creazione.
+4. **Temi sotto-coperti** rispetto ai tuoi interessi → segnala gap.
+5. **Stale claim**: `expires_at` passato senza re-verifica.
+6. **Bias estremi**: tema coperto 100% da fonti `partisan` → priorità di arricchimento neutrale.
+7. **Output**: report markdown azionabile. Appendi a `log.md`: `## [YYYY-MM-DD] lint`.
+
+## Stile di scrittura
+
+- **{{Lingua}}** ovunque.
+- Prosa concisa, niente enfasi marketing. Liste e tabelle quando hanno senso.
+- Ogni claim/numero importante con fonte tra parentesi: `... ([[Source Page]])`.
+- **Linka aggressivamente** con `[[Page Name]]`. La densità di link è il valore. Un `[[Nome]]` verso una pagina non ancora creata è OK: segnala un buco.
+
+## Governance
+
+- **Mai modificare i raw** (Cerchio 1).
+- **Mai sovrascrivere claim senza note**: le contraddizioni si registrano.
+- **HITL** su: nuovi tag, cancellazioni, cambio di `sensitivity` verso il basso.
+- **`bias: internal` va giustificato**: se può essere `neutral`, classificalo così.
+- **`sensitivity` di default = `internal`** quando ambigua. Mai assumere `public` senza evidenza.

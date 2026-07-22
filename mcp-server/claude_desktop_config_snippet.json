@@ -1,0 +1,16 @@
+{
+  "_commento": "Snippet per claude_desktop_config.json. Copia il blocco 'my-wiki' dentro la tua chiave 'mcpServers'. Rimpiazza i path. Usa forward slash / anche su Windows. Vedi README.md per la modalità HTTP hostata.",
+
+  "mcpServers": {
+    "my-wiki": {
+      "command": "C:/Percorso/Assoluto/A/python.exe",
+      "args": [
+        "C:/Percorso/Al/Repo/llm-wiki-starter-kit/mcp-server/server.py"
+      ],
+      "env": {
+        "WIKI_DIR": "C:/Percorso/Al/Repo/llm-wiki-starter-kit/example-wiki/wiki",
+        "MCP_SERVER_NAME": "my-wiki"
+      }
+    }
+  }
+}
