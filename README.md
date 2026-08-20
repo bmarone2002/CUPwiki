@@ -101,13 +101,13 @@ Esempi di raw **presenti** e **non** (o solo parzialmente) riflessi in `wiki/con
 ### 1. Clona / pull
 
 ```bash
-git clone <URL-DEL-REPO> llm-wiki-cup
-cd llm-wiki-cup
+git clone https://github.com/bmarone2002/CUPwiki.git
+cd CUPwiki
 # oppure, se già clonato:
 git pull
 ```
 
-> Se il remote non è ancora configurato, condividete un repo GitHub/GitLab privato (i raw e le memorie possono contenere dati `confidential`: **non** pubblicare in chiaro).
+> Repo: [github.com/bmarone2002/CUPwiki](https://github.com/bmarone2002/CUPwiki). Contiene memorie e dati di contenzioso (`sensitivity` spesso `confidential`): il repository deve restare **privato**; invita il collega come collaborator, non pubblicare in chiaro.
 
 ### 2. Apri in Cursor
 
