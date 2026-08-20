@@ -5,7 +5,7 @@ tags: [soggettività-passiva-mediata, comma-831, interpretazione-autentica-dl146
 sensitivity: internal
 bias: internal
 confidence: verified
-updated_at: 2026-07-22
+updated_at: 2026-07-27
 ---
 
 # Soggettività passiva in via mediata (art. 1, comma 831, L. 160/2019)
@@ -31,10 +31,12 @@ Gli operatori invocano l'art. 5, comma 14-quinquies, DL 146/2021 per escludersi.
 | Qualificazione | Uso mediato → soggetto passivo CUP | Nessun uso → escluso |
 
 ## Precedenti a supporto
-[[2025-05-06 Trib Piacenza 207 — Vodafone soggettività mediata]] · [[2025-11-25 Trib Bergamo 1523 — Fastweb]] · [[2025-02-20 Trib Treviso 240 — appello]] · [[2026-04-28 Cass 11479 — VULA Wind]] · Trib. Bergamo 289/2026 · Trib. Napoli 5948/2026 · Trib. Ivrea 1255/2025 · Trib. Bolzano 431/2024 e 908/2025.
+[[2026-04-28 Cass 11479 — VULA Wind]] · [[2025-11-25 Trib Bergamo 1523 — Fastweb]] · [[2026-03-21 Trib Bergamo 289 — Vodafone]] ⚠claimed · [[2026-04-13 Trib Napoli 5948 — WindTre utilizzo materiale]] ⚠claimed · [[2025-10-15 Trib Bolzano 908 — WindTre WLR]] · [[2025-09-29 Trib Ivrea 1255 — WindTre soggettività mediata]] · [[2025-07-16 Trib Piacenza 350 — WindTre appello]] · [[2025-05-06 Trib Piacenza 207 — Vodafone soggettività mediata]] · [[2024-04-08 Trib Bolzano 431 — Vodafone soggettività mediata]] · [[2025-02-20 Trib Treviso 240 — appello]].
+
+Dottrina: [[Merciari — Soggettività passiva in via mediata (telefonia)]].
 
 ## Controtesi degli operatori (⚠ da confutare)
-Gli operatori (cfr. atto di citazione [[Vodafone]]) sostengono: (a) di essere "mere società di vendita" prive di legittimazione passiva; (b) l'applicabilità dell'art. 5 co. 14-quinquies DL 146/2021 anche alle TLC (argomentata coi lavori parlamentari e con gli emendamenti al DL 228/2021 non approvati); (c) l'assenza di "utilizzo materiale" per il solo accesso virtuale; (d) la duplicazione del canone. A supporto citano precedenti di merito **anteriori** al consolidamento 2026 (Trib. Vicenza 83/2025, Padova, Perugia, La Spezia, Asti, Rovigo) e pronunce su TOSAP/COSAP (Cass. SS.UU. 8628/2020, Cons. Stato 2976/2021). Superati, per le TLC, da [[2026-04-28 Cass 11479 — VULA Wind]].
+Gli operatori (cfr. atto di citazione [[Vodafone]]) sostengono: (a) di essere "mere società di vendita" prive di legittimazione passiva; (b) l'applicabilità dell'art. 5 co. 14-quinquies DL 146/2021 anche alle TLC (argomentata coi lavori parlamentari e con gli emendamenti al DL 228/2021 non approvati); (c) l'assenza di "utilizzo materiale" per il solo accesso virtuale; (d) la duplicazione del canone. A supporto citano precedenti di merito **anteriori** al consolidamento 2026 (Trib. Vicenza 83/2025, Padova, Perugia, La Spezia, Asti, Rovigo) e pronunce su TOSAP/COSAP (Cass. SS.UU. 8628/2020, Cons. Stato 2976/2021). Vedi anche [[2025-12-01 Rassegna Vodafone — precedenti avversi CUP telefonia]] come repertorio `partisan` delle citazioni avverse ricorrenti. Superati, per le TLC, da [[2026-04-28 Cass 11479 — VULA Wind]].
 
 ## Orientamento
 `consolidato` a favore degli Enti (merito + Cassazione 2026); **controverso** fino al 2025 sul requisito dell'"utilizzo materiale".

@@ -1,0 +1,16 @@
+{
+  "_commento": "Config Claude Desktop per la wiki CUP. Copia il blocco 'cup-wiki' in claude_desktop_config.json e sostituisci TUTTI i path con quelli assoluti della TUA macchina (cartella del clone + .venv-mcp).",
+
+  "mcpServers": {
+    "cup-wiki": {
+      "command": "/ABS/PATH/AL/CLONE/.venv-mcp/bin/python",
+      "args": [
+        "/ABS/PATH/AL/CLONE/mcp-server/server.py"
+      ],
+      "env": {
+        "WIKI_DIR": "/ABS/PATH/AL/CLONE/wiki",
+        "MCP_SERVER_NAME": "cup-wiki"
+      }
+    }
+  }
+}

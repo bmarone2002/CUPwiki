@@ -29,3 +29,4 @@ Sentenza spartiacque: verifica sempre se l'atto è anteriore o posteriore al **0
 
 ## Precedenti collegati
 - [[2026-05-01 Cass SS.UU. 12225 — natura tributaria CUP]]
+- [[2026-05-22 Circolare MEF 1-DF — natura tributaria CUP]] (prassi MEF: riconsiderazione dell'orientamento “patrimoniale”; pubblicazione regolamenti/tariffe sul sito DF dal 2026)

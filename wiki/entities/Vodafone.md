@@ -21,7 +21,13 @@ Soggetto passivo del CUP servizi di rete **in via mediata** ([[Soggettività pas
 4. **Duplicazione del canone** (paga già TIM) → il comma 831 imputa a ciascuno le proprie utenze; nessuna duplicazione.
 
 ## ⚠ Precedenti favorevoli all'operatore citati da Vodafone (bias: partisan / orientamento superato)
-Trib. Vicenza 83/2025; Trib. Padova 1802/2023 e 02.01.2024; Trib. Perugia 05.07.2024 e 18.03.2025; Trib. La Spezia 21.03.2025; Trib. Asti 12.03.2025; Trib. Rovigo 10.03.2025; Cass. SS.UU. 8628/2020 e Cons. Stato 2976/2021 (in tema TOSAP/COSAP, ante riforma). Questi precedenti riflettono l'orientamento **anteriore** al consolidamento del 2026 e sono superati, per le TLC, da [[2026-04-28 Cass 11479 — VULA Wind]]; utili per anticipare le citazioni avverse.
+Trib. Vicenza 83/2025; Trib. Padova 1802/2023 e 02.01.2024; Trib. Perugia 05.07.2024 e 18.03.2025; Trib. La Spezia 21.03.2025; Trib. Asti 12.03.2025; Trib. Rovigo 10.03.2025; Cass. SS.UU. 8628/2020 e Cons. Stato 2976/2021 (in tema TOSAP/COSAP, ante riforma). Questi precedenti riflettono l'orientamento **anteriore** al consolidamento del 2026 e sono superati, per le TLC, da [[2026-04-28 Cass 11479 — VULA Wind]]; utili per anticipare le citazioni avverse. Vedi il dossier [[2025-12-01 Rassegna Vodafone — precedenti avversi CUP telefonia]].
+
+## Precedenti rilevanti (favorevoli-ente)
+- [[2025-05-06 Trib Piacenza 207 — Vodafone soggettività mediata]]
+- [[2024-04-08 Trib Bolzano 431 — Vodafone soggettività mediata]]
+- [[2026-03-21 Trib Bergamo 289 — Vodafone]] ⚠ PDF assente (`claimed`)
 
 ## Contenziosi in wiki
 - [[Comune di Berbenno c. Vodafone — Trib. Bergamo (ord.) 2025]]
+- [[Comune di Palagiano c. Vodafone — Trib. Taranto 2026]] ⚠ documentazione ancora in bozza

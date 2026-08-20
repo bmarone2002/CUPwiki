@@ -18,10 +18,10 @@ Comune della provincia di Bergamo (C.F./P.IVA 00313890162), Via Europa n. 7 — 
 
 ## Contenziosi
 - [[Comune di Berbenno c. WindTre — GdP Bergamo RG 3481-2025]] (telefonia, comma 831, annualità 2021–2024).
-- Cause parallele contro [[Vodafone]] e [[Fastweb]] (stesso filone telefonia — da schedare).
-
-## Note
-- Avviso di Accertamento Esecutivo n. 3 del 06/02/2025 (omesso versamento CUP servizi di rete 2021–2024), calcolo induttivo su quote di mercato [[AGCOM]] applicate alla popolazione residente.
+- [[Comune di Berbenno c. Vodafone — Trib. Bergamo (ord.) 2025]]
+- [[Comune di Berbenno c. Fastweb — Trib. Bergamo RG 2320-2025]] ✅ sent. 1523/2025 (favorevole-ente)
 
 ## Fonti citate
 - [[2026-05-14 Memoria Berbenno c. WindTre (GdP Bergamo)]]
+- [[2025-11-18 Note finali Berbenno c. Fastweb (Trib. Bergamo)]]
+- [[2025-11-25 Trib Bergamo 1523 — Fastweb]]

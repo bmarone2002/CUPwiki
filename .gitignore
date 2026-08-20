@@ -2,5 +2,10 @@
 *.tmp
 ~$*
 .venv/
+.venv-mcp/
+tools/uv-bin/
+tools/uv-install.sh
 raw_text/
 __pycache__/
+.obsidian/workspace.json
+wiki/.obsidian/workspace.json

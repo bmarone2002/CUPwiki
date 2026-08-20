@@ -111,6 +111,7 @@ class WikiIndex:
     """Carica tutte le pagine wiki in memoria e offre metodi di lettura/scrittura."""
 
     _FORBIDDEN_CHARS = '<>:"/\\|?*\x00'  # caratteri vietati nei nomi file cross-platform
+    _AUXILIARY_PAGES = {"log", "index"}
 
     def __init__(self, wiki_dir: Path):
         self.wiki_dir = wiki_dir
@@ -154,6 +155,8 @@ class WikiIndex:
         results = []
         for page in self.pages:
             meta = page["meta"]
+            if page["name"].lower() in self._AUXILIARY_PAGES:
+                continue
 
             # Filtri opzionali
             if tags:
@@ -225,6 +228,8 @@ class WikiIndex:
         results = []
         for page in self.pages:
             meta = page["meta"]
+            if page["name"].lower() in self._AUXILIARY_PAGES:
+                continue
             content_lower = page["content"].lower()
             meta_str = str(meta).lower()
             is_self = page["name"].lower() == nm
@@ -255,7 +260,8 @@ class WikiIndex:
             meta = page["meta"]
             if meta.get("type") != "source":
                 continue
-            if doc_type and str(meta.get("doc_type", "")).lower() != doc_type.lower():
+            source_kind = meta.get("doc_type", meta.get("subtype", ""))
+            if doc_type and str(source_kind).lower() != doc_type.lower():
                 continue
             if max_age_months:
                 ingested = meta.get("ingested_at")
@@ -269,7 +275,7 @@ class WikiIndex:
             results.append({
                 "name":        page["name"],
                 "path":        page["path"],
-                "doc_type":    meta.get("doc_type", ""),
+                "doc_type":    source_kind,
                 "bias":        meta.get("bias", ""),
                 "confidence":  meta.get("confidence", ""),
                 "ingested_at": str(meta.get("ingested_at", "")),

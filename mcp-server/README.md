@@ -11,7 +11,25 @@ Generico e riusabile: l'unico punto di adattamento al tuo dominio è il dizionar
 
 (Dettaglio nel docstring in testa a `server.py`.)
 
-## Due modi di esecuzione
+## Setup rapido — repo CUP (wiki reale)
+
+Su questa macchina il server è già stato validato con **Python 3.12** in `.venv-mcp/` (creato via `uv` locale in `tools/uv-bin/`).
+
+```bash
+# Rigenera venv + dipendenze (se manca .venv-mcp)
+tools/uv-bin/uv python install 3.12
+tools/uv-bin/uv venv --python 3.12 .venv-mcp
+tools/uv-bin/uv pip install --python .venv-mcp/bin/python -r mcp-server/requirements.txt
+
+# Test di lettura (smoke + demo operativo)
+chmod +x tests/run_mcp_tests.sh
+./tests/run_mcp_tests.sh
+```
+
+**Claude Desktop:** incolla il blocco `cup-wiki` da [`claude_desktop_config_cup.json`](claude_desktop_config_cup.json) nel tuo `claude_desktop_config.json`, poi riavvia Claude completamente e apri una **nuova chat**. Dovresti vedere 7 tool `cup-wiki__*`.
+
+Report test: `tests/results/mcp_smoke_report.md`, `tests/results/mcp_operational_read_report.md`.
+
 
 | Modalità | Per chi | Setup |
 |---|---|---|
@@ -24,8 +42,10 @@ Generico e riusabile: l'unico punto di adattamento al tuo dominio è il dizionar
 
 ### 1. Installa le dipendenze
 
+Prerequisito: **Python 3.10+**. Il package `mcp` non supporta Python 3.9.
+
 ```bash
-pip install -r mcp-server/requirements.txt
+python3.10 -m pip install -r mcp-server/requirements.txt
 ```
 
 (Per il solo stdio bastano `mcp`, `pyyaml`, `python-frontmatter`; `uvicorn`/`starlette` servono solo all'HTTP.)
@@ -121,7 +141,7 @@ Variabili d'ambiente rilevanti:
 | `MCP_GIT_AUTO_PUSH` | `true` → ogni write fa commit+push automatico al remote. |
 | `MCP_GIT_BRANCH` | Branch su cui pushare (default `main`). |
 
-> Un `Dockerfile` non è incluso (dipende dal tuo hosting). Minimo: immagine Python 3.10+, `pip install -r requirements.txt`, `CMD ["python","server.py","--transport","http","--port","8765"]`, `EXPOSE 8765`. Per il git auto-push, monta una credenziale git (PAT) nell'env del container.
+> Un `Dockerfile` non è incluso (dipende dal tuo hosting). Minimo: immagine Python 3.10+, `python -m pip install -r requirements.txt`, `CMD ["python","server.py","--transport","http","--port","8765"]`, `EXPOSE 8765`. Per il git auto-push, monta una credenziale git (PAT) nell'env del container.
 
 ### Lato client (utente)
 

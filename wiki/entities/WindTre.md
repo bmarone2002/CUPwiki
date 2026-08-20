@@ -21,8 +21,14 @@ Soggetto passivo del CUP servizi di rete **in via mediata** ([[Soggettività pas
 
 ## Precedenti rilevanti che coinvolgono WindTre
 - [[2026-04-28 Cass 11479 — VULA Wind]] (Cassazione: il gestore con accesso VULA è obbligato al CUP).
-- Tribunale di Napoli n. 5948/2026 (accertamento CUP 2021–2024 contro Wind confermato).
-- Tribunale di Ivrea n. 1255/2025.
+- [[2026-04-13 Trib Napoli 5948 — WindTre utilizzo materiale]] ⚠ PDF assente (`claimed`).
+- [[2025-09-29 Trib Ivrea 1255 — WindTre soggettività mediata]] (Bosconero — appello rigettato).
+- [[2025-10-15 Trib Bolzano 908 — WindTre WLR]] (San Lorenzo di Sebato — riforma a favore Ente anche su WLR).
+- [[2025-07-16 Trib Piacenza 350 — WindTre appello]] (Vigolzone — appello rigettato).
 
 ## Contenziosi in wiki
 - [[Comune di Berbenno c. WindTre — GdP Bergamo RG 3481-2025]]
+- [[Comune di Capriate San Gervasio c. WindTre — GdP Bergamo RG 2714-2026]]
+- [[Comune di Montefalco c. WindTre — CGT Perugia 2026]]
+- [[Comune di Francavilla al Mare c. WindTre — CGT Chieti 2026]]
+
